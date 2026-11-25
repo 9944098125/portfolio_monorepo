@@ -1,6 +1,5 @@
 import React from "react";
 import { Code, TrendingUp } from "lucide-react";
-import { Badge } from "app/components/ui/badge";
 
 interface Skill {
 	_id?: string;
@@ -18,27 +17,6 @@ interface SkillsSectionProps {
 		background?: string;
 	};
 }
-
-const getLevelColor = (
-	level: string[] | undefined,
-	primaryColor: string,
-	secondaryColor: string
-) => {
-	if (!level || level.length === 0) return { bg: "#e5e7eb", text: "#6b7280" };
-	
-	const levelStr = level[0]?.toLowerCase() || "";
-	
-	switch (levelStr) {
-		case "expert":
-			return { bg: `${primaryColor}`, text: "#ffffff" };
-		case "intermediate":
-			return { bg: `${secondaryColor}`, text: "#ffffff" };
-		case "beginner":
-			return { bg: "#e5e7eb", text: "#6b7280" };
-		default:
-			return { bg: "#e5e7eb", text: "#6b7280" };
-	}
-};
 
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, theme }) => {
 	const primaryColor = theme?.primaryColor || "#3b82f6";
@@ -183,17 +161,6 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, color }) => {
 				style={{ color: color }}>
 				{skill.name}
 			</span>
-			{skill.level && skill.level.length > 0 && (
-				<Badge
-					variant="secondary"
-					className="ml-2 text-xs"
-					style={{
-						backgroundColor: `${color}30`,
-						color: color,
-					}}>
-					{skill.level[0]}
-				</Badge>
-			)}
 		</div>
 	);
 };
