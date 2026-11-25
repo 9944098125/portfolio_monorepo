@@ -1,0 +1,546 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 240 10% 3.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 240 10% 3.9%;
+		--primary: 240 5.88% 10%;
+		--primary-foreground: 355.7 100% 97.3%;
+		--secondary: 240 4.8% 95.9%;
+		--secondary-foreground: 240 5.9% 10%;
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 212.73 26.83% 83.92%;
+		--input: 212.73 26.83% 83.92%;
+		--ring: 142.1 76.2% 36.3%;
+		--radius: 0.5rem;
+		--light: 0 0% 93.73%;
+		--bg-card: 0 0% 0%;
+		--chart-color: 221 83% 53%;
+	}
+	.dark,
+	.dark .theme-blue,
+	.dark .theme-green,
+	.dark .theme-gray,
+	.dark .theme-neutral,
+	.dark .theme-orange,
+	.dark .theme-red,
+	.dark .theme-rose,
+	.dark .theme-slate,
+	.dark .theme-stone,
+	.dark .theme-violet,
+	.dark .theme-yellow,
+	.dark .theme-zinc,
+	.dark.theme-blue {
+		--background: 240 10% 4%;
+		--foreground: 0 0% 98%;
+		--muted: 240 3.7% 15.9%;
+		--muted-foreground: 240 5% 64.9%;
+		--popover: 240 10% 3.9%;
+		--popover-foreground: 0 0% 98%;
+		--card: 240 10% 4%;
+		--card-foreground: 0 0% 98%;
+		--border: 240 3.7% 15.9%;
+		--input: 240 3.7% 15.9%;
+		--primary: 0 0% 98%;
+		--primary-foreground: 240 5.9% 10%;
+		--secondary: 240 3.7% 15.9%;
+		--secondary-foreground: 0 0% 98%;
+		--accent: 240 3.7% 15.9%;
+		--accent-foreground: 0 0% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+		--ring: 240 4.9% 83.9%;
+	}
+}
+.theme-green {
+	--background: 0 0% 100%;
+	--foreground: 240 10% 3.9%;
+	--muted: 240 4.8% 95.9%;
+	--muted-foreground: 240 3.8% 46.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 240 10% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 240 10% 3.9%;
+	--border: 240 5.9% 90%;
+	--input: 240 5.9% 90%;
+	--primary: 142.1 76.2% 36.3%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--secondary: 240 4.8% 95.9%;
+	--secondary-foreground: 240 5.9% 10%;
+	--accent: 240 4.8% 95.9%;
+	--accent-foreground: 240 5.9% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 142.1 76.2% 36.3%;
+}
+
+.theme-zinc {
+	--background: 0 0% 100%;
+	--foreground: 240 10% 3.9%;
+	--muted: 240 4.8% 95.9%;
+	--muted-foreground: 240 3.8% 46.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 240 10% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 240 10% 3.9%;
+	--border: 240 5.9% 90%;
+	--input: 240 5.9% 90%;
+	--primary: 240 5.9% 10%;
+	--primary-foreground: 0 0% 98%;
+	--secondary: 240 4.8% 95.9%;
+	--secondary-foreground: 240 5.9% 10%;
+	--accent: 240 4.8% 95.9%;
+	--accent-foreground: 240 5.9% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 240 5.9% 10%;
+}
+
+.theme-slate {
+	--background: 0 0% 100%;
+	--foreground: 222.2 84% 4.9%;
+	--muted: 210 40% 96.1%;
+	--muted-foreground: 215.4 16.3% 46.9%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 222.2 84% 4.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 222.2 84% 4.9%;
+	--border: 214.3 31.8% 91.4%;
+	--input: 214.3 31.8% 91.4%;
+	--primary: 222.2 47.4% 11.2%;
+	--primary-foreground: 210 40% 98%;
+	--secondary: 210 40% 96.1%;
+	--secondary-foreground: 222.2 47.4% 11.2%;
+	--accent: 210 40% 96.1%;
+	--accent-foreground: 222.2 47.4% 11.2%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 210 40% 98%;
+	--ring: 222.2 84% 4.9%;
+}
+
+.theme-stone {
+	--background: 0 0% 100%;
+	--foreground: 20 14.3% 4.1%;
+	--muted: 60 4.8% 95.9%;
+	--muted-foreground: 25 5.3% 44.7%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 20 14.3% 4.1%;
+	--card: 0 0% 100%;
+	--card-foreground: 20 14.3% 4.1%;
+	--border: 20 5.9% 90%;
+	--input: 20 5.9% 90%;
+	--primary: 24 9.8% 10%;
+	--primary-foreground: 60 9.1% 97.8%;
+	--secondary: 60 4.8% 95.9%;
+	--secondary-foreground: 24 9.8% 10%;
+	--accent: 60 4.8% 95.9%;
+	--accent-foreground: 24 9.8% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 60 9.1% 97.8%;
+	--ring: 20 14.3% 4.1%;
+}
+
+.theme-gray {
+	--background: 0 0% 100%;
+	--foreground: 224 71.4% 4.1%;
+	--muted: 220 14.3% 95.9%;
+	--muted-foreground: 220 8.9% 46.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 224 71.4% 4.1%;
+	--card: 0 0% 100%;
+	--card-foreground: 224 71.4% 4.1%;
+	--border: 220 13% 91%;
+	--input: 220 13% 91%;
+	--primary: 220.9 39.3% 11%;
+	--primary-foreground: 210 20% 98%;
+	--secondary: 220 14.3% 95.9%;
+	--secondary-foreground: 220.9 39.3% 11%;
+	--accent: 220 14.3% 95.9%;
+	--accent-foreground: 220.9 39.3% 11%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 210 20% 98%;
+	--ring: 224 71.4% 4.1%;
+}
+
+.theme-neutral {
+	--background: 0 0% 100%;
+	--foreground: 0 0% 3.9%;
+	--muted: 0 0% 96.1%;
+	--muted-foreground: 0 0% 45.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 0 0% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 0 0% 3.9%;
+	--border: 0 0% 89.8%;
+	--input: 0 0% 89.8%;
+	--primary: 0 0% 9%;
+	--primary-foreground: 0 0% 98%;
+	--secondary: 0 0% 96.1%;
+	--secondary-foreground: 0 0% 9%;
+	--accent: 0 0% 96.1%;
+	--accent-foreground: 0 0% 9%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 0 0% 3.9%;
+}
+
+.theme-red {
+	--background: 0 0% 100%;
+	--foreground: 0 0% 3.9%;
+	--muted: 0 0% 96.1%;
+	--muted-foreground: 0 0% 45.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 0 0% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 0 0% 3.9%;
+	--border: 0 0% 89.8%;
+	--input: 0 0% 89.8%;
+	--primary: 0 72.2% 50.6%;
+	--primary-foreground: 0 85.7% 97.3%;
+	--secondary: 0 0% 96.1%;
+	--secondary-foreground: 0 0% 9%;
+	--accent: 0 0% 96.1%;
+	--accent-foreground: 0 0% 9%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 0 72.2% 50.6%;
+}
+
+.theme-rose {
+	--background: 0 0% 100%;
+	--foreground: 240 10% 3.9%;
+	--muted: 240 4.8% 95.9%;
+	--muted-foreground: 240 3.8% 46.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 240 10% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 240 10% 3.9%;
+	--border: 240 5.9% 90%;
+	--input: 240 5.9% 90%;
+	--primary: 346.8 77.2% 49.8%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--secondary: 240 4.8% 95.9%;
+	--secondary-foreground: 240 5.9% 10%;
+	--accent: 240 4.8% 95.9%;
+	--accent-foreground: 240 5.9% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 346.8 77.2% 49.8%;
+}
+
+.theme-orange {
+	--background: 0 0% 100%;
+	--foreground: 20 14.3% 4.1%;
+	--muted: 60 4.8% 95.9%;
+	--muted-foreground: 25 5.3% 44.7%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 20 14.3% 4.1%;
+	--card: 0 0% 100%;
+	--card-foreground: 20 14.3% 4.1%;
+	--border: 20 5.9% 90%;
+	--input: 20 5.9% 90%;
+	--primary: 24.6 95% 53.1%;
+	--primary-foreground: 60 9.1% 97.8%;
+	--secondary: 60 4.8% 95.9%;
+	--secondary-foreground: 24 9.8% 10%;
+	--accent: 60 4.8% 95.9%;
+	--accent-foreground: 24 9.8% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 60 9.1% 97.8%;
+	--ring: 24.6 95% 53.1%;
+}
+
+.theme-green {
+	--background: 0 0% 100%;
+	--foreground: 240 10% 3.9%;
+	--muted: 240 4.8% 95.9%;
+	--muted-foreground: 240 3.8% 46.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 240 10% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 240 10% 3.9%;
+	--border: 240 5.9% 90%;
+	--input: 240 5.9% 90%;
+	--primary: 142.1 76.2% 36.3%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--secondary: 240 4.8% 95.9%;
+	--secondary-foreground: 240 5.9% 10%;
+	--accent: 240 4.8% 95.9%;
+	--accent-foreground: 240 5.9% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 142.1 76.2% 36.3%;
+}
+
+.theme-blue {
+	--background: 0 0% 100%;
+	--foreground: 222.2 84% 4.9%;
+	--muted: 210 40% 96.1%;
+	--muted-foreground: 215.4 16.3% 46.9%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 222.2 84% 4.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 222.2 84% 4.9%;
+	--border: 214.3 31.8% 91.4%;
+	--input: 214.3 31.8% 91.4%;
+	--primary: 221.2 83.2% 53.3%;
+	--primary-foreground: 210 40% 98%;
+	--secondary: 210 40% 96.1%;
+	--secondary-foreground: 222.2 47.4% 11.2%;
+	--accent: 210 40% 96.1%;
+	--accent-foreground: 222.2 47.4% 11.2%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 210 40% 98%;
+	--ring: 221.2 83.2% 53.3%;
+}
+
+.theme-yellow {
+	--background: 0 0% 100%;
+	--foreground: 20 14.3% 4.1%;
+	--muted: 60 4.8% 95.9%;
+	--muted-foreground: 25 5.3% 44.7%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 20 14.3% 4.1%;
+	--card: 0 0% 100%;
+	--card-foreground: 20 14.3% 4.1%;
+	--border: 20 5.9% 90%;
+	--input: 20 5.9% 90%;
+	--primary: 47.9 95.8% 53.1%;
+	--primary-foreground: 26 83.3% 14.1%;
+	--secondary: 60 4.8% 95.9%;
+	--secondary-foreground: 24 9.8% 10%;
+	--accent: 60 4.8% 95.9%;
+	--accent-foreground: 24 9.8% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 60 9.1% 97.8%;
+	--ring: 20 14.3% 4.1%;
+}
+
+.theme-violet {
+	--background: 0 0% 100%;
+	--foreground: 224 71.4% 4.1%;
+	--muted: 220 14.3% 95.9%;
+	--muted-foreground: 220 8.9% 46.1%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 224 71.4% 4.1%;
+	--card: 0 0% 100%;
+	--card-foreground: 224 71.4% 4.1%;
+	--border: 220 13% 91%;
+	--input: 220 13% 91%;
+	--primary: 262.1 83.3% 57.8%;
+	--primary-foreground: 210 20% 98%;
+	--secondary: 220 14.3% 95.9%;
+	--secondary-foreground: 220.9 39.3% 11%;
+	--accent: 220 14.3% 95.9%;
+	--accent-foreground: 220.9 39.3% 11%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 210 20% 98%;
+	--ring: 262.1 83.3% 57.8%;
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		font-family: "Poppins", sans-serif;
+		font-size: 14px;
+		pointer-events: auto !important;
+	}
+}
+
+/* Tenor container: centers and frames the GIF */
+.tenor-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(0deg);
+	transition: transform 0.4s ease, scale 0.4s ease;
+}
+
+.tenor-container:hover {
+	transform: rotate(5deg) scale(1.05);
+}
+
+/* GIF embed: controls sizing and responsiveness */
+.tenor-gif-embed {
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: 0 8px 25px rgba(255, 165, 0, 0.25);
+	width: 100%;
+	max-width: 480px;
+	transform: scale(1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tenor-gif-embed:hover {
+	transform: scale(1.03);
+	box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+}
+
+/* Make sure it looks good on mobile too */
+@media (max-width: 768px) {
+	.tenor-gif-embed {
+		max-width: 100%;
+	}
+	.tenor-container {
+		transform: none;
+	}
+}
+
+/* React DatePicker Custom Styles */
+.react-datepicker-wrapper {
+	width: 100%;
+}
+
+.react-datepicker__input-container {
+	width: 100%;
+}
+
+.react-datepicker__input-container input {
+	width: 100%;
+}
+
+.react-datepicker {
+	font-family: "Poppins", sans-serif;
+	border: 1px solid hsl(var(--border));
+	border-radius: calc(var(--radius) - 2px);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.react-datepicker__header {
+	background-color: hsl(var(--background));
+	border-bottom: 1px solid hsl(var(--border));
+	border-top-left-radius: calc(var(--radius) - 2px);
+	border-top-right-radius: calc(var(--radius) - 2px);
+	padding-top: 0.75rem;
+}
+
+.react-datepicker__current-month {
+	color: hsl(var(--foreground));
+	font-weight: 600;
+	font-size: 0.875rem;
+	margin-bottom: 0.5rem;
+}
+
+.react-datepicker__day-name {
+	color: hsl(var(--muted-foreground));
+	font-weight: 500;
+	font-size: 0.75rem;
+	width: 2rem;
+	line-height: 2rem;
+	margin: 0.166rem;
+}
+
+.react-datepicker__day {
+	color: hsl(var(--foreground));
+	width: 2rem;
+	line-height: 2rem;
+	margin: 0.166rem;
+	border-radius: calc(var(--radius) - 4px);
+	transition: all 0.2s;
+}
+
+.react-datepicker__day:hover {
+	background-color: hsl(var(--accent));
+	color: hsl(var(--accent-foreground));
+	border-radius: calc(var(--radius) - 4px);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+	background-color: hsl(var(--primary));
+	color: hsl(var(--primary-foreground));
+	border-radius: calc(var(--radius) - 4px);
+	font-weight: 600;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+	background-color: hsl(var(--primary));
+	opacity: 0.9;
+}
+
+.react-datepicker__day--today {
+	font-weight: 600;
+	color: hsl(var(--primary));
+}
+
+.react-datepicker__day--disabled {
+	color: hsl(var(--muted-foreground));
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.react-datepicker__day--outside-month {
+	color: hsl(var(--muted-foreground));
+	opacity: 0.4;
+}
+
+.react-datepicker__navigation {
+	top: 0.75rem;
+}
+
+.react-datepicker__navigation-icon::before {
+	border-color: hsl(var(--foreground));
+	border-width: 2px 2px 0 0;
+}
+
+.react-datepicker__navigation:hover *::before {
+	border-color: hsl(var(--primary));
+}
+
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+	background-color: hsl(var(--background));
+	border: 1px solid hsl(var(--border));
+	border-radius: calc(var(--radius) - 2px);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+	color: hsl(var(--foreground));
+	padding: 0.5rem;
+}
+
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+	background-color: hsl(var(--accent));
+	color: hsl(var(--accent-foreground));
+}
+
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+	background-color: hsl(var(--primary));
+	color: hsl(var(--primary-foreground));
+}
+
+.react-datepicker__triangle {
+	border-bottom-color: hsl(var(--background)) !important;
+}
+
+.react-datepicker__triangle::before {
+	border-bottom-color: hsl(var(--border)) !important;
+}
+
+html{
+	scroll-behavior: smooth;
+}

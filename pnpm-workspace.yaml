@@ -1,0 +1,9 @@
+packages:
+  - "apps/*"
+allowBuilds:
+  canvas: false
+  core-js: false
+  core-js-pure: false
+  esbuild: true
+  spawn-sync: false
+  styled-components: false

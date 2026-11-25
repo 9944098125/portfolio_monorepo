@@ -1,0 +1,25 @@
+# Don't check auto-generated stuff into git
+coverage
+build
+node_modules
+stats.json
+.pnp
+.pnp.js
+
+# misc
+.DS_Store
+npm-debug.log*
+
+# pnpm
+pnpm-debug.log*
+
+# env
+.env
+.env.development.local
+.env.test.local
+.env.production
+
+generated-cra-app
+.cra-template-rb
+template
+.eslintcache

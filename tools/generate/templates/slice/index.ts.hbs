@@ -1,0 +1,43 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from 'utils/@reduxjs/toolkit';
+import { useInjectReducer } from 'utils/redux-injectors';
+import { {{pascalCase name}}State } from './types';
+{{#if requiresApi}}
+import { createApi } from '@reduxjs/toolkit/query/react';
+import { endpoints, formatErrors, baseQuery } from 'utils/api/endpoints';
+{{/if}}
+
+export const initialState: {{pascalCase name}}State = {};
+
+const slice = createSlice({
+  name: '{{camelCase name}}',
+  initialState,
+  reducers: {
+    // required functions
+  },
+});
+
+{{#if requiresApi}}
+export const api = createApi({
+  reducerPath: '{{camelCase name}}Api',
+  baseQuery,
+  endpoints: build => ({
+  // api integration functions
+  }),
+});
+{{/if}}
+
+export const { actions: {{camelCase name}}Actions } = slice;
+
+export const use{{pascalCase name}}Slice = () => {
+  useInjectReducer({ key: slice.name, reducer: slice.reducer });
+{{#if requiresApi}}
+  useInjectReducer({ key: api.reducerPath, reducer: api.reducer });
+{{/if}}
+  return {
+    actions: slice.actions,
+{{#if requiresApi}}
+    ...api,
+{{/if}}
+  };
+};
